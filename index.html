@@ -275,20 +275,22 @@
     /* Portfolio grid - each card has a visible thumbnail preview */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 2rem;
       margin: 2rem 0 3rem;
     }
 
     .portfolio-card {
       background: var(--bg-card);
-      border-radius: 20px;
+      border-radius: 24px;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       border: 1px solid var(--border-subtle);
       cursor: pointer;
       opacity: 0;
       transform: translateY(30px);
+      display: flex;
+      flex-direction: column;
     }
 
     .portfolio-card.reveal-card {
@@ -302,13 +304,13 @@
       box-shadow: 0 20px 35px -12px rgba(108, 99, 255, 0.3);
     }
 
-    /* THUMBNAIL PREVIEW AREA - shows actual video thumbnail from drive */
+    /* 9:16 PORTRAIT THUMBNAIL PREVIEW - vertical aspect ratio for clearer preview */
     .card-thumbnail {
       position: relative;
       width: 100%;
       background: #0c0c14;
       overflow: hidden;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 9 / 16; /* 9:16 portrait mode - perfect for vertical videos / mobile-first preview */
     }
 
     .video-preview-img {
@@ -329,13 +331,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.35);
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
       transition: opacity 0.3s;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(3px);
     }
 
     .portfolio-card:hover .play-overlay {
@@ -343,15 +345,15 @@
     }
 
     .play-icon-circle {
-      width: 54px;
-      height: 54px;
+      width: 56px;
+      height: 56px;
       background: var(--accent);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: 0 0 20px rgba(108,99,255,0.6);
+      font-size: 1.6rem;
+      box-shadow: 0 0 20px rgba(108,99,255,0.7);
       transition: 0.2s;
     }
 
@@ -361,21 +363,24 @@
       right: 12px;
       background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(4px);
-      padding: 0.2rem 0.8rem;
+      padding: 0.25rem 0.9rem;
       border-radius: 30px;
       font-size: 0.6rem;
       font-weight: 700;
       text-transform: uppercase;
       color: var(--gold);
       z-index: 2;
+      letter-spacing: 0.5px;
     }
 
     .card-tag.featured {
       color: var(--accent);
+      background: rgba(0,0,0,0.7);
     }
 
     .card-content {
       padding: 1.2rem;
+      flex: 1;
     }
 
     .card-title {
@@ -507,8 +512,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(16px);
+      background: rgba(0, 0, 0, 0.96);
+      backdrop-filter: blur(20px);
       z-index: 1000;
       align-items: center;
       justify-content: center;
@@ -518,14 +523,15 @@
       max-width: 880px;
       width: 90%;
       background: #111;
-      border-radius: 24px;
+      border-radius: 28px;
       overflow: hidden;
       border: 1px solid var(--accent);
+      box-shadow: 0 25px 40px rgba(0,0,0,0.5);
     }
 
     .video-wrap {
       position: relative;
-      padding-bottom: 56.25%;
+      padding-bottom: 56.25%; /* 16:9 for embed player inside modal */
     }
 
     .video-wrap iframe {
@@ -539,17 +545,26 @@
     .modal-footer {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 0.8rem 1.2rem;
       background: #0a0a0f;
+      font-family: 'Inter', sans-serif;
     }
 
     .close-modal {
       background: var(--accent);
       border: none;
-      padding: 0.3rem 1rem;
+      padding: 0.4rem 1.2rem;
       border-radius: 40px;
       color: white;
       cursor: pointer;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .close-modal:hover {
+      background: #8b84ff;
+      transform: scale(0.96);
     }
 
     .fade-up-scroll {
@@ -567,9 +582,12 @@
       .container { padding: 0 1.2rem; }
       .about-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2.4rem; }
-      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .contact-flex { flex-direction: column; }
       .profile-img { width: 100px; height: 100px; }
+      .card-thumbnail {
+        aspect-ratio: 9 / 16; /* keep portrait on mobile too */
+      }
     }
   </style>
 </head>
@@ -601,7 +619,7 @@
       <h1>Rodolfojr<br />Catolos</h1>
       <div class="hero-tagline">AI Content Creator | Educational & Cinematic Videos</div>
       <p class="hero-description">
-        AI-powered visual storytelling. Educational explainers and cinematic pieces crafted with cutting-edge generative models. Scroll down to see my work — each project displays a live thumbnail preview.
+        AI-powered visual storytelling. Educational explainers and cinematic pieces crafted with cutting-edge generative models. Scroll down to see my work — each project displays a live thumbnail preview in 9:16 portrait format for clarity.
       </p>
       <div class="btn-group">
         <a href="#portfolio" class="btn btn-primary">✦ Explore Work</a>
@@ -615,7 +633,7 @@
       <div class="section-header fade-up-scroll">
         <div class="section-label">PORTFOLIO</div>
         <h2 class="section-title">My Creations</h2>
-        <div class="section-sub">AI-generated videos that educate, captivate, and push the boundaries of digital storytelling.</div>
+        <div class="section-sub">AI-generated videos that educate, captivate, and push the boundaries of digital storytelling. Now with 9:16 portrait previews.</div>
       </div>
 
       <div class="filter-bar fade-up-scroll">
@@ -625,86 +643,58 @@
       </div>
 
       <div class="portfolio-grid" id="portfolioGrid">
-        <!-- WORK 1 - Cinematic Podcast Style (UPDATED: new podcast link) -->
-        <div class="portfolio-card fade-up-scroll" data-cat="cinematic" data-drive-id="10HYVvOvzAAB3rDkPVPWY1b3vGE2_bBNG" data-video-title="AI Realistic Podcast (Episode 1)">
+        <!-- WORK 1 - 9:16 portrait mode preview - Cinematic Podcast -->
+        <div class="portfolio-card fade-up-scroll" data-cat="cinematic" data-drive-id="1FxLiYsLBflCGqeALum9AGOvZPSFQ-To8" data-video-title="AI Realistic Podcast (Vol. 1)">
           <div class="card-thumbnail">
-            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=10HYVvOvzAAB3rDkPVPWY1b3vGE2_bBNG&sz=w640" alt="video preview" onerror="this.src='https://placehold.co/640x360/1a1a2e/6c63ff?text=AI+Preview'">
+            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1FxLiYsLBflCGqeALum9AGOvZPSFQ-To8&sz=w640" alt="video preview" onerror="this.src='https://placehold.co/640x1138/1a1a2e/6c63ff?text=AI+Preview+9:16'">
             <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
             <div class="card-tag featured">★ Cinematic</div>
           </div>
           <div class="card-content">
-            <div class="card-title">AI Realistic Podcast (Episode 1)</div>
-            <div class="card-desc">AI podcast videos with lifelike hosts, natural conversations, and cinematic visuals that feel just like a real studio show.</div>
+            <div class="card-title">Put Salt in Your Socks? The Old Remedy That Still Works Today</div>
+            <div class="card-desc">Discover the surprising benefits of warm salt socks, an old natural remedy used for pain, swelling, muscle aches, and more — explained in a simple and fascinating way with realistic AI visuals inspired by ancestral healing traditions.</div>
             <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
           </div>
         </div>
 
-        <!-- WORK 2 - Educational Explainer -->
-        <div class="portfolio-card fade-up-scroll" data-cat="educational" data-drive-id="1d5r6uWuh1vQI6-3enc4hTpVBdREDpmdI" data-video-title="Health & Science Explainer">
+        <!-- WORK 2 - Educational Explainer 9:16 -->
+        <div class="portfolio-card fade-up-scroll" data-cat="educational" data-drive-id="12NZeBfK_P7_QU0rPzqeLGNKkhDOB4BIy" data-video-title="Future of Learning: AI Education">
           <div class="card-thumbnail">
-            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1d5r6uWuh1vQI6-3enc4hTpVBdREDpmdI&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x360/1a1a2e/6c63ff?text=AI+Explainer'">
+            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=12NZeBfK_P7_QU0rPzqeLGNKkhDOB4BIy&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x1138/1a1a2e/6c63ff?text=AI+Explainer+9:16'">
             <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
             <div class="card-tag">Educational</div>
           </div>
           <div class="card-content">
-            <div class="card-title">Health & Science Explainer</div>
-            <div class="card-desc">AI storytelling that simplifies neuroscience and health habits with vivid, accurate visuals.</div>
+            <div class="card-title">Never Throw Away Spotted Bananas Until You Watch This</div>
+            <div class="card-desc">Learn the surprising truth about brown spotted bananas, what they may reveal about ripeness and nutrients, and simple food facts most people never notice — explained in a fun and easy way with realistic AI visuals.</div>
             <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
           </div>
         </div>
 
-        <!-- WORK 3 - Cinematic Podcast Style (Second Episode) (UPDATED: new podcast link) -->
-        <div class="portfolio-card fade-up-scroll" data-cat="cinematic" data-drive-id="1uVGk3K1sZ36G3GIm0YpZWqV4toAsV_vC" data-video-title="AI Realistic Podcast Vol. 2">
+        <!-- WORK 3 - Cinematic Dreamscapes 9:16 -->
+        <div class="portfolio-card fade-up-scroll" data-cat="cinematic" data-drive-id="1JarxbSwD3pTTQKno73cukhER1GIaEWyM" data-video-title="Cinematic Dreamscapes">
           <div class="card-thumbnail">
-            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1uVGk3K1sZ36G3GIm0YpZWqV4toAsV_vC&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x360/1a1a2e/f0c060?text=Cinematic+Preview'">
+            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1JarxbSwD3pTTQKno73cukhER1GIaEWyM&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x1138/1a1a2e/f0c060?text=Cinematic+9:16'">
             <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
             <div class="card-tag featured">★ Cinematic</div>
           </div>
           <div class="card-content">
-            <div class="card-title">AI Realistic Podcast Vol. 2</div>
-            <div class="card-desc">Another immersive AI podcast episode with deep conversations, studio-quality audio, and hyper-realistic visuals.</div>
+            <div class="card-title">This Juice Changed Everything… Here’s Why People Want It</div>
+            <div class="card-desc">Discover powerful juice ingredients, natural wellness tips, and simple health habits that may help support energy, digestion, and overall health — explained in a short and engaging way with realistic AI visuals.</div>
             <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
           </div>
         </div>
 
-        <!-- WORK 4 - Educational Science Explainer (UPDATED WITH NEW LINK) -->
+        <!-- WORK 4 - Neuroscience Explainer 9:16 -->
         <div class="portfolio-card fade-up-scroll" data-cat="educational" data-drive-id="1D5TXwKx7boDnH1En81UlDIFlboCIDJjv" data-video-title="Neuroscience Explainer">
           <div class="card-thumbnail">
-            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1D5TXwKx7boDnH1En81UlDIFlboCIDJjv&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x360/1a1a2e/6c63ff?text=AI+Film'">
-            <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
-            <div class="card-tag featured">Educational</div>
-          </div>
-          <div class="card-content">
-            <div class="card-title">Neuroscience Explainer</div>
-            <div class="card-desc">Deep dive into how the brain works, neural pathways, and cognitive science made simple with AI visuals.</div>
-            <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
-          </div>
-        </div>
-
-        <!-- WORK 5 - Educational Health Explainer -->
-        <div class="portfolio-card fade-up-scroll" data-cat="educational" data-drive-id="1BX9a-0oDDat76_SEphQjuedsBr3lP58G" data-video-title="Health & Wellness Explainer">
-          <div class="card-thumbnail">
-            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1BX9a-0oDDat76_SEphQjuedsBr3lP58G&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x360/1a1a2e/6c63ff?text=Urban+Story'">
+            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1D5TXwKx7boDnH1En81UlDIFlboCIDJjv&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x1138/1a1a2e/6c63ff?text=Neuroscience+9:16'">
             <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
             <div class="card-tag">Educational</div>
           </div>
           <div class="card-content">
-            <div class="card-title">Health & Wellness Explainer</div>
-            <div class="card-desc">Exploring healthy habits, nutrition science, and mental wellness through engaging AI-driven storytelling.</div>
-            <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
-          </div>
-        </div>
-
-        <!-- WORK 6 - Cinematic Visual Journey -->
-        <div class="portfolio-card fade-up-scroll" data-cat="cinematic" data-drive-id="1OrK9If2W_ZHAmfERnemV4BFIEXdNCzMA" data-video-title="Deep Space Elegy">
-          <div class="card-thumbnail">
-            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1OrK9If2W_ZHAmfERnemV4BFIEXdNCzMA&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x360/1a1a2e/6c63ff?text=Space+AI'">
-            <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
-            <div class="card-tag featured">★ Cinematic</div>
-          </div>
-          <div class="card-content">
-            <div class="card-title">Deep Space Elegy</div>
-            <div class="card-desc">Cosmic scale AI storytelling combining astronomy visuals and surreal atmospheres — a cinematic journey through space.</div>
+            <div class="card-title">Insulin Resistance Explained</div>
+            <div class="card-desc">Discover the hidden signs of insulin resistance, why weight gain happens even with dieting, and simple daily habits that may help your body use food properly — explained in a simple and relatable way with realistic AI visuals.</div>
             <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
           </div>
         </div>
@@ -719,8 +709,8 @@
         <div class="fade-up-scroll">
           <h2 class="section-title">About<br />Me</h2>
           <div class="stats-row">
-            <div class="stat-card"><div class="stat-number">20+</div><div class="stat-label">AI Videos</div></div>
-            <div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Series</div></div>
+            <div class="stat-card"><div class="stat-number">15+</div><div class="stat-label">AI Videos</div></div>
+            <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Series</div></div>
             <div class="stat-card"><div class="stat-number">AI</div><div class="stat-label">Native Workflow</div></div>
           </div>
         </div>
@@ -758,7 +748,7 @@
   </section>
 </main>
 <footer>
-  <div class="container"><p>© 2025 Rodolfojr Catolos — AI Content Creator. Thumbnails auto-displayed from Drive. Click to play.</p></div>
+  <div class="container"><p>© 2025 Rodolfojr Catolos — AI Content Creator. Portrait 9:16 preview thumbnails from Drive. Click any card to watch.</p></div>
 </footer>
 
 <div id="videoModal" class="video-modal">
