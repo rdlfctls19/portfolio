@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Rodolfojr Catolos | AI Content Creator – Visual Previews</title>
+  <title>Rodolfojr Catolos | AI Storyteller — Cinematic & Educational</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -33,7 +33,7 @@
       overflow-x: hidden;
     }
 
-    /* animated background canvas */
+    /* animated AI neural canvas */
     #ai-canvas-bg {
       position: fixed;
       top: 0;
@@ -42,7 +42,7 @@
       height: 100%;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.4;
+      opacity: 0.45;
     }
 
     .container {
@@ -53,6 +53,7 @@
       z-index: 2;
     }
 
+    /* navbar */
     .navbar {
       padding: 1.2rem 0;
       border-bottom: 1px solid var(--border-subtle);
@@ -98,6 +99,7 @@
       color: var(--accent);
     }
 
+    /* hero section */
     .hero {
       padding: 4rem 0 5rem;
       text-align: center;
@@ -219,6 +221,7 @@
       transform: translateY(-2px);
     }
 
+    /* section headers */
     .section-header {
       margin: 3rem 0 1.5rem;
       text-align: center;
@@ -246,6 +249,7 @@
       margin: 0 auto;
     }
 
+    /* filter bar */
     .filter-bar {
       display: flex;
       gap: 0.8rem;
@@ -272,7 +276,7 @@
       border-color: var(--accent);
     }
 
-    /* Portfolio grid - each card has a visible thumbnail preview */
+    /* portfolio grid — 9:16 portrait thumbnails */
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -304,13 +308,13 @@
       box-shadow: 0 20px 35px -12px rgba(108, 99, 255, 0.3);
     }
 
-    /* 9:16 PORTRAIT THUMBNAIL PREVIEW - vertical aspect ratio for clearer preview */
+    /* 9:16 portrait thumbnail */
     .card-thumbnail {
       position: relative;
       width: 100%;
       background: #0c0c14;
       overflow: hidden;
-      aspect-ratio: 9 / 16; /* 9:16 portrait mode - perfect for vertical videos / mobile-first preview */
+      aspect-ratio: 9 / 16;
     }
 
     .video-preview-img {
@@ -409,6 +413,7 @@
       gap: 6px;
     }
 
+    /* about */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
@@ -461,6 +466,7 @@
       margin-bottom: 0.8rem;
     }
 
+    /* contact */
     .contact-flex {
       display: flex;
       justify-content: space-between;
@@ -504,7 +510,7 @@
       font-size: 0.75rem;
     }
 
-    /* Modal */
+    /* video modal */
     .video-modal {
       display: none;
       position: fixed;
@@ -531,7 +537,7 @@
 
     .video-wrap {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 for embed player inside modal */
+      padding-bottom: 56.25%;
     }
 
     .video-wrap iframe {
@@ -548,7 +554,6 @@
       align-items: center;
       padding: 0.8rem 1.2rem;
       background: #0a0a0f;
-      font-family: 'Inter', sans-serif;
     }
 
     .close-modal {
@@ -559,12 +564,6 @@
       color: white;
       cursor: pointer;
       font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .close-modal:hover {
-      background: #8b84ff;
-      transform: scale(0.96);
     }
 
     .fade-up-scroll {
@@ -583,11 +582,7 @@
       .about-grid { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2.4rem; }
       .portfolio-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .contact-flex { flex-direction: column; }
       .profile-img { width: 100px; height: 100px; }
-      .card-thumbnail {
-        aspect-ratio: 9 / 16; /* keep portrait on mobile too */
-      }
     }
   </style>
 </head>
@@ -612,18 +607,18 @@
     <div class="container">
       <div class="profile-wrapper">
         <div class="profile-ring">
-          <img class="profile-img" src="dp123.png" alt="Rodolfojr Catolos">
+          <img class="profile-img" src="https://placehold.co/400x400/1e1e2a/6c63ff?text=RJC" alt="Rodolfojr Catolos">
         </div>
       </div>
-      <div class="badge">AVAILABLE FOR PROJECTS</div>
+      <div class="badge">✨ AI VIDEO CONTENT CREATOR</div>
       <h1>Rodolfojr<br />Catolos</h1>
-      <div class="hero-tagline">AI Content Creator | Educational & Cinematic Videos</div>
+      <div class="hero-tagline">AI-Powered Content & Video Creator</div>
       <p class="hero-description">
-        AI-powered visual storytelling. Educational explainers and cinematic pieces crafted with cutting-edge generative models. Scroll down to see my work — each project displays a live thumbnail preview in 9:16 portrait format for clarity.
+        AI-powered visual storyteller. From short explainers to long-form films, I use generative AI and proven production workflows to create the exact video you need — on time and on brief. Let’s build your project. 
       </p>
       <div class="btn-group">
-        <a href="#portfolio" class="btn btn-primary">✦ Explore Work</a>
-        <a href="#contact" class="btn btn-outline">Contact</a>
+        <a href="#portfolio" class="btn btn-primary">✦ Watch Reel</a>
+        <a href="#contact" class="btn btn-outline">Collaborate</a>
       </div>
     </div>
   </section>
@@ -632,126 +627,129 @@
     <div class="container">
       <div class="section-header fade-up-scroll">
         <div class="section-label">PORTFOLIO</div>
-        <h2 class="section-title">My Creations</h2>
-        <div class="section-sub">AI-generated videos that educate, captivate, and push the boundaries of digital storytelling. Now with 9:16 portrait previews.</div>
+        <h2 class="section-title">AI Cinematic & Education</h2>
+        <div class="section-sub">Cinematic videos and learning experiences powered by AI.</div>
       </div>
 
       <div class="filter-bar fade-up-scroll">
-        <button class="filter-btn active" data-filter="all">All Work</button>
-        <button class="filter-btn" data-filter="educational">Educational</button>
-        <button class="filter-btn" data-filter="cinematic">Cinematic</button>
+        <button class="filter-btn active" data-filter="all">All Work (6)</button>
+        <button class="filter-btn" data-filter="educational">🎓 Educational (3)</button>
+        <button class="filter-btn" data-filter="cinematic">🎬 Cinematic (3)</button>
       </div>
 
       <div class="portfolio-grid" id="portfolioGrid">
-        <!-- WORK 1 - 9:16 portrait mode preview - Cinematic Podcast -->
-        <div class="portfolio-card fade-up-scroll" data-cat="cinematic" data-drive-id="1FxLiYsLBflCGqeALum9AGOvZPSFQ-To8" data-video-title="AI Realistic Podcast (Vol. 1)">
+        
+        <!-- ========== EDUCATIONAL (3) ========== -->
+        <!-- EDU 1: Insulin Resistance Explained -->
+        <div class="portfolio-card fade-up-scroll" data-cat="educational" data-drive-id="1P3StMsA7J7iFoYSBDazXfuYbg2bILw_Q" data-video-title="Educational: Insulin Resistance Explained">
           <div class="card-thumbnail">
-            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1FxLiYsLBflCGqeALum9AGOvZPSFQ-To8&sz=w640" alt="video preview" onerror="this.src='https://placehold.co/640x1138/1a1a2e/6c63ff?text=AI+Preview+9:16'">
+            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1P3StMsA7J7iFoYSBDazXfuYbg2bILw_Q&sz=w640" alt="Insulin Resistance preview" onerror="this.src='https://placehold.co/640x1138/1a1a2e/6c63ff?text=Insulin+Explained+9:16'">
             <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
-            <div class="card-tag featured">★ Cinematic</div>
+            <div class="card-tag">🎓 Educational</div>
           </div>
           <div class="card-content">
-            <div class="card-title">Put Salt in Your Socks? The Old Remedy That Still Works Today</div>
-            <div class="card-desc">Discover the surprising benefits of warm salt socks, an old natural remedy used for pain, swelling, muscle aches, and more — explained in a simple and fascinating way with realistic AI visuals inspired by ancestral healing traditions.</div>
-            <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
+            <div class="card-title">Insulin Resistance Explained — Why Weight Sticks</div>
+            <div class="card-desc">Discover hidden signs of insulin resistance, why dieting fails, and simple daily habits to restore metabolic flexibility. A science-backed AI visual guide.</div>
+            <a href="#" class="card-link preview-trigger">▶ Watch Lesson →</a>
           </div>
         </div>
 
-        <!-- WORK 2 - Educational Explainer 9:16 -->
-        <div class="portfolio-card fade-up-scroll" data-cat="educational" data-drive-id="12NZeBfK_P7_QU0rPzqeLGNKkhDOB4BIy" data-video-title="Future of Learning: AI Education">
+        <!-- EDU 2: Spotted Banana Nutrition Secret -->
+        <div class="portfolio-card fade-up-scroll" data-cat="educational" data-drive-id="12NZeBfK_P7_QU0rPzqeLGNKkhDOB4BIy" data-video-title="Educational: Banana Nutrition Truth">
           <div class="card-thumbnail">
-            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=12NZeBfK_P7_QU0rPzqeLGNKkhDOB4BIy&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x1138/1a1a2e/6c63ff?text=AI+Explainer+9:16'">
+            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=12NZeBfK_P7_QU0rPzqeLGNKkhDOB4BIy&sz=w640" alt="Banana wisdom" onerror="this.src='https://placehold.co/640x1138/1a1a2e/6c63ff?text=Banana+Secrets+9:16'">
             <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
-            <div class="card-tag">Educational</div>
+            <div class="card-tag">🎓 Educational</div>
           </div>
           <div class="card-content">
-            <div class="card-title">Never Throw Away Spotted Bananas Until You Watch This</div>
-            <div class="card-desc">Learn the surprising truth about brown spotted bananas, what they may reveal about ripeness and nutrients, and simple food facts most people never notice — explained in a fun and easy way with realistic AI visuals.</div>
-            <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
+            <div class="card-title">Never Throw Away Spotted Bananas — Nutritional Shift</div>
+            <div class="card-desc">Learn why brown spots mean higher antioxidants and easier digestion. A food science revelation with AI-crafted realistic visuals.</div>
+            <a href="#" class="card-link preview-trigger">▶ Watch Lesson →</a>
           </div>
         </div>
 
-        <!-- WORK 3 - Cinematic Dreamscapes 9:16 -->
-        <div class="portfolio-card fade-up-scroll" data-cat="cinematic" data-drive-id="1JarxbSwD3pTTQKno73cukhER1GIaEWyM" data-video-title="Cinematic Dreamscapes">
+        <!-- EDU 3: Ancient Hair Growth Remedy (Ayurvedic) -->
+        <div class="portfolio-card fade-up-scroll" data-cat="educational" data-drive-id="1Ck8nyw3i8DM8AY6lI_vVmLYGfenxukn6" data-video-title="Educational: Ayurvedic Hair Secret">
           <div class="card-thumbnail">
-            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1JarxbSwD3pTTQKno73cukhER1GIaEWyM&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x1138/1a1a2e/f0c060?text=Cinematic+9:16'">
+            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1Ck8nyw3i8DM8AY6lI_vVmLYGfenxukn6&sz=w640" alt="Hair growth remedy" onerror="this.src='https://placehold.co/640x1138/1a1a2e/6c63ff?text=Hair+Remedy+9:16'">
             <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
-            <div class="card-tag featured">★ Cinematic</div>
+            <div class="card-tag">🎓 Educational</div>
           </div>
           <div class="card-content">
-            <div class="card-title">This Juice Changed Everything… Here’s Why People Want It</div>
-            <div class="card-desc">Discover powerful juice ingredients, natural wellness tips, and simple health habits that may help support energy, digestion, and overall health — explained in a short and engaging way with realistic AI visuals.</div>
-            <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
+            <div class="card-title">Ancient Hair Growth Secret: Fenugreek & Coconut Ritual</div>
+            <div class="card-desc">Ayurvedic treatment to nourish roots, target thinning areas, and revive edges. Timeless wisdom visualized with AI.</div>
+            <a href="#" class="card-link preview-trigger">▶ Watch Lesson →</a>
           </div>
         </div>
 
-        <!-- WORK 4 - Neuroscience Explainer 9:16 -->
-        <div class="portfolio-card fade-up-scroll" data-cat="educational" data-drive-id="1D5TXwKx7boDnH1En81UlDIFlboCIDJjv" data-video-title="Neuroscience Explainer">
+        <!-- ========== CINEMATIC (3) ========== -->
+        <!-- CINEMA 1: Salt in Socks / Old Remedy (Cinematic mood) -->
+        <div class="portfolio-card fade-up-scroll" data-cat="cinematic" data-drive-id="1xmQuJKv3_EPQ8pxNBGLkPS3haySCKBhq" data-video-title="Cinematic: The Salt Remedy">
           <div class="card-thumbnail">
-            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1D5TXwKx7boDnH1En81UlDIFlboCIDJjv&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x1138/1a1a2e/6c63ff?text=Neuroscience+9:16'">
+            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1xmQuJKv3_EPQ8pxNBGLkPS3haySCKBhq&sz=w640" alt="Cinematic salt remedy" onerror="this.src='https://placehold.co/640x1138/1a1a2e/f0c060?text=Cinematic+Salt+9:16'">
             <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
-            <div class="card-tag">Educational</div>
+            <div class="card-tag featured">🎬 Cinematic</div>
           </div>
           <div class="card-content">
-            <div class="card-title">Insulin Resistance Explained</div>
-            <div class="card-desc">Discover the hidden signs of insulin resistance, why weight gain happens even with dieting, and simple daily habits that may help your body use food properly — explained in a simple and relatable way with realistic AI visuals.</div>
-            <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
+            <div class="card-title">Put Salt in Your Socks? The Old Remedy That Still Works</div>
+            <div class="card-desc">Ancestral healing wisdom meets cinematic AI. Warm salt socks for pain, swelling and muscle aches — a stunning visual journey.</div>
+            <a href="#" class="card-link preview-trigger">▶ Trailer →</a>
           </div>
         </div>
 
-                <!-- WORK 5 - NEW ADDITION - Hair Growth Educational 9:16 -->
-        <div class="portfolio-card fade-up-scroll" data-cat="educational" data-drive-id="1Ck8nyw3i8DM8AY6lI_vVmLYGfenxukn6" data-video-title="The Ancient Hair Growth Secret They Never Told You About">
+        <!-- CINEMA 2: This Juice Changed Everything (Wellness cinematic) -->
+        <div class="portfolio-card fade-up-scroll" data-cat="cinematic" data-drive-id="1dMXV7-YqQ29t3EbtM1n0jSRRWvQtUI5X" data-video-title="Cinematic: Morning Ritual Juice">
           <div class="card-thumbnail">
-            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1Ck8nyw3i8DM8AY6lI_vVmLYGfenxukn6&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x1138/1a1a2e/6c63ff?text=Hair+Growth+9:16'">
+            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1dMXV7-YqQ29t3EbtM1n0jSRRWvQtUI5X&sz=w640" alt="Cinematic wellness juice" onerror="this.src='https://placehold.co/640x1138/1a1a2e/f0c060?text=Juice+Cinematic+9:16'">
             <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
-            <div class="card-tag">Educational</div>
+            <div class="card-tag featured">🎬 Cinematic</div>
           </div>
           <div class="card-content">
-            <div class="card-title">The Ancient Hair Growth Secret They Never Told You About</div>
-            <div class="card-desc">Discover a powerful Ayurvedic hair remedy used for generations to support stronger, fuller-looking hair naturally. This simple fenugreek and coconut oil scalp treatment is believed to nourish roots, target thinning areas, and revive weak spots like edges, hairlines, crowns, and bald patches.</div>
-            <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
+            <div class="card-title">Drink This Too Often — People Will Ask What Changed</div>
+            <div class="card-desc">Matcha, lime & apple cider vinegar ritual — cinematic storytelling around a transformative morning drink.</div>
+            <a href="#" class="card-link preview-trigger">▶ Trailer →</a>
           </div>
         </div>
 
-        <!-- WORK 6 - NEW ADDITION - Wellness Drink Educational 9:16 -->
-<div class="portfolio-card fade-up-scroll" data-cat="cinematic" data-drive-id="1dMXV7-YqQ29t3EbtM1n0jSRRWvQtUI5X" data-video-title="Drink This Too Often and People Will Ask What Changed">
-  <div class="card-thumbnail">
-    <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1dMXV7-YqQ29t3EbtM1n0jSRRWvQtUI5X&sz=w640" alt="preview" onerror="this.src='https://placehold.co/640x1138/1a1a2e/6c63ff?text=Wellness+Drink+9:16'">
-    <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
-    <div class="card-tag">★ Cinematic</div>
-  </div>
-  <div class="card-content">
-    <div class="card-title">Drink This Too Often and People Will Ask What Changed</div>
-    <div class="card-desc">This simple morning drink combines matcha, lime, and apple cider vinegar into a powerful wellness routine that many people swear by. Some say it helps them feel lighter, reduce bloating, and start the day refreshed. Watch until the end for the full recipe and routine.</div>
-    <a href="#" class="card-link preview-trigger">▶ Watch Preview →</a>
-  </div>
-</div>
+        <!-- CINEMA 3: Dreamscape / Surprising Juice (evocative short) -->
+        <div class="portfolio-card fade-up-scroll" data-cat="cinematic" data-drive-id="1JarxbSwD3pTTQKno73cukhER1GIaEWyM" data-video-title="Cinematic: The Golden Elixir">
+          <div class="card-thumbnail">
+            <img class="video-preview-img" src="https://drive.google.com/thumbnail?id=1JarxbSwD3pTTQKno73cukhER1GIaEWyM&sz=w640" alt="dream cinematic" onerror="this.src='https://placehold.co/640x1138/1a1a2e/f0c060?text=Dream+Elixir+9:16'">
+            <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
+            <div class="card-tag featured">🎬 Cinematic</div>
+          </div>
+          <div class="card-content">
+            <div class="card-title">This Juice Changed Everything — The Golden Elixir Story</div>
+            <div class="card-desc">Discover the mysterious wellness drink that sparked a movement. A cinematic dreamscape blending health mystery and nature’s palette.</div>
+            <a href="#" class="card-link preview-trigger">▶ Trailer →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="about">
     <div class="container">
-      <div class="section-label fade-up-scroll">THE CREATOR</div>
+      <div class="section-label fade-up-scroll">VISIONARY</div>
       <div class="about-grid">
         <div class="fade-up-scroll">
-          <h2 class="section-title">About<br />Me</h2>
+          <h2 class="section-title">Rodolfojr<br />Catolos</h2>
           <div class="stats-row">
-            <div class="stat-card"><div class="stat-number">15+</div><div class="stat-label">AI Videos</div></div>
-            <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Series</div></div>
-            <div class="stat-card"><div class="stat-number">AI</div><div class="stat-label">Native Workflow</div></div>
+            <div class="stat-card"><div class="stat-number">6+</div><div class="stat-label">AI Masterpieces</div></div>
+            <div class="stat-card"><div class="stat-number">3+3</div><div class="stat-label">Edu + Cinema</div></div>
+            <div class="stat-card"><div class="stat-number">AI</div><div class="stat-label">Native Director</div></div>
           </div>
         </div>
         <div class="fade-up-scroll">
-          <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">I'm Rodolfojr — AI content creator based in Antipolo, Philippines. I merge artificial intelligence with cinematic & educational storytelling. From health explainers to immersive sci-fi, every frame is crafted through prompt engineering, video generation, and human direction.</p>
+          <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">I blend AI and storytelling to produce knowledge-rich explainers and visually striking cinematic shorts tailored to your brief. Flexible across topics and formats, I use generative video tools to bring your ideas to life.</p>
           <div class="skill-list">
             <span class="skill-badge">Prompt Engineering</span>
-            <span class="skill-badge">Image/Video Gen</span>
-            <span class="skill-badge">CapCut</span>
-            <span class="skill-badge">Veo 3.1 / Runway</span>
+            <span class="skill-badge">Runway Gen-3</span>
+            <span class="skill-badge">Veo / Pika</span>
+            <span class="skill-badge">CapCut AI</span>
           </div>
-          <div class="exp-item"><div class="card-title" style="font-size: 0.9rem;">AI Content Creator</div><div style="font-size: 0.75rem; color: var(--accent);">Freelance · 2025 – Present</div></div>
-          <div class="exp-item"><div class="card-title" style="font-size: 0.9rem;">IT Background</div><div style="font-size: 0.75rem; color: var(--accent);">STI College</div></div>
+          <div class="exp-item"><div class="card-title" style="font-size: 0.9rem;">AI Content Creator & Editor</div><div style="font-size: 0.75rem; color: var(--accent);">Freelance · 2024 – Present</div></div>
+          <div class="exp-item"><div class="card-title" style="font-size: 0.9rem;">EdTech & Visual Storytelling</div><div style="font-size: 0.75rem; color: var(--accent);">Blending education with cinematic AI</div></div>
         </div>
       </div>
     </div>
@@ -761,22 +759,22 @@
     <div class="container">
       <div class="contact-flex fade-up-scroll">
         <div class="contact-left">
-          <div class="section-label" style="margin-bottom: 0.2rem;">Get In Touch</div>
-          <h3>Let's Collaborate</h3>
-          <p style="color: var(--text-secondary); max-width: 280px;">Need AI-generated content for your brand, course, or social media? Let's create.</p>
-          <a href="mailto:rodolfojrcatolos@gmail.com" class="btn btn-primary" style="margin-top:1rem;">Send Email →</a>
+          <div class="section-label" style="margin-bottom: 0.2rem;">Connect</div>
+          <h3>Let's Create Together</h3>
+          <p style="color: var(--text-secondary); max-width: 280px;">Educational series, cinematic commercials, or AI explainers — let's bring your vision to life.</p>
+          <a href="mailto:rodolfojrcatolos@gmail.com" class="btn btn-primary" style="margin-top:1rem;">✉️ Start a Project</a>
         </div>
         <div class="contact-details">
           <div class="contact-item"><div class="contact-icon">✉️</div><div><div style="font-size:0.7rem; color:var(--text-secondary);">EMAIL</div><div>rodolfojrcatolos@gmail.com</div></div></div>
           <div class="contact-item"><div class="contact-icon">📞</div><div><div style="font-size:0.7rem; color:var(--text-secondary);">PHONE</div><div>+63 976 558 9219</div></div></div>
-          <div class="contact-item"><div class="contact-icon">📍</div><div><div style="font-size:0.7rem; color:var(--text-secondary);">LOCATION</div><div>Antipolo, Philippines</div></div></div>
+          <div class="contact-item"><div class="contact-icon">📍</div><div><div style="font-size:0.7rem; color:var(--text-secondary);">LOCATION</div><div>Antipolo, PH</div></div></div>
         </div>
       </div>
     </div>
   </section>
 </main>
 <footer>
-  <div class="container"><p>© 2025 Rodolfojr Catolos — AI Content Creator. Portrait 9:16 preview thumbnails from Drive. Click any card to watch.</p></div>
+  <div class="container"><p>© 2025 Rodolfojr Catolos — AI Content Creator. 3 Educational + 3 Cinematic visions. Click any card to watch full preview.</p></div>
 </footer>
 
 <div id="videoModal" class="video-modal">
@@ -787,28 +785,28 @@
 </div>
 
 <script>
-  // Animated Neural Background
+  // animated neural background
   const canvas = document.getElementById('ai-canvas-bg');
   let ctx = canvas.getContext('2d');
   let width, height, particles = [];
-  function initParticles() { particles = []; for(let i=0;i<60;i++) { particles.push({ x: Math.random()*width, y: Math.random()*height, radius:1.5+Math.random()*3, vx:(Math.random()-0.5)*0.25, vy:(Math.random()-0.5)*0.2, color:`rgba(108,99,255,${0.2+Math.random()*0.4})` }); } }
-  function drawNeural() { if(!ctx) return; ctx.clearRect(0,0,width,height); for(let i=0;i<particles.length;i++){ const p=particles[i]; ctx.beginPath(); ctx.arc(p.x,p.y,p.radius,0,Math.PI*2); ctx.fillStyle=p.color; ctx.fill(); for(let j=i+1;j<particles.length;j++){ const p2=particles[j]; const dist=Math.hypot(p.x-p2.x,p.y-p2.y); if(dist<100){ ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(p2.x,p2.y); ctx.strokeStyle=`rgba(108,99,255,${0.04*(1-dist/100)})`; ctx.stroke(); } } p.x+=p.vx; p.y+=p.vy; if(p.x<0) p.x=width; if(p.x>width) p.x=0; if(p.y<0) p.y=height; if(p.y>height) p.y=0; } requestAnimationFrame(drawNeural); }
+  function initParticles() { particles = []; for(let i=0;i<70;i++) { particles.push({ x: Math.random()*width, y: Math.random()*height, radius:1.5+Math.random()*3, vx:(Math.random()-0.5)*0.2, vy:(Math.random()-0.5)*0.2, color:`rgba(108,99,255,${0.2+Math.random()*0.4})` }); } }
+  function drawNeural() { if(!ctx) return; ctx.clearRect(0,0,width,height); for(let i=0;i<particles.length;i++){ const p=particles[i]; ctx.beginPath(); ctx.arc(p.x,p.y,p.radius,0,Math.PI*2); ctx.fillStyle=p.color; ctx.fill(); for(let j=i+1;j<particles.length;j++){ const p2=particles[j]; const dist=Math.hypot(p.x-p2.x,p.y-p2.y); if(dist<110){ ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(p2.x,p2.y); ctx.strokeStyle=`rgba(108,99,255,${0.04*(1-dist/110)})`; ctx.stroke(); } } p.x+=p.vx; p.y+=p.vy; if(p.x<0) p.x=width; if(p.x>width) p.x=0; if(p.y<0) p.y=height; if(p.y>height) p.y=0; } requestAnimationFrame(drawNeural); }
   function resizeCanvas(){ width=window.innerWidth; height=window.innerHeight; canvas.width=width; canvas.height=height; initParticles(); }
   window.addEventListener('resize',resizeCanvas); resizeCanvas(); drawNeural();
 
-  // Intersection Observer
+  // scroll reveal
   const fadeElements = document.querySelectorAll('.fade-up-scroll');
   const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('revealed'); }); }, { threshold:0.1 });
   fadeElements.forEach(el => observer.observe(el));
-  document.querySelectorAll('.portfolio-card').forEach(card => observer.observe(card));
-
-  // Filter logic
-  const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.portfolio-card');
+  cards.forEach(card => observer.observe(card));
+
+  // filter logic (3 edu + 3 cinema exactly)
+  const filterBtns = document.querySelectorAll('.filter-btn');
   function filterCards(cat) { cards.forEach(card => { if(cat==='all' || card.dataset.cat === cat) { card.style.display = ''; setTimeout(()=>card.classList.add('reveal-card'),10); } else { card.style.display = 'none'; card.classList.remove('reveal-card'); } }); }
   filterBtns.forEach(btn => { btn.addEventListener('click', () => { filterBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active'); filterCards(btn.dataset.filter); }); });
 
-  // Video Modal + Preview logic
+  // modal logic
   const modal = document.getElementById('videoModal');
   const modalIframe = document.getElementById('modalIframe');
   const closeModalBtn = document.getElementById('closeModalBtn');
@@ -818,7 +816,7 @@
     if(fileId) {
       const embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
       modalIframe.src = embedUrl;
-      modalTitleSpan.innerText = title || 'AI Video Preview';
+      modalTitleSpan.innerText = title || 'AI Creation Preview';
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
@@ -827,20 +825,18 @@
   modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
   closeModalBtn.addEventListener('click', closeModal);
 
-  // attach click events to each card and preview links
+  // attach click events
   cards.forEach(card => {
     const driveId = card.dataset.driveId;
-    const videoTitle = card.dataset.videoTitle || 'AI Creation';
-    // whole card click
+    const videoTitle = card.dataset.videoTitle || 'AI Video';
     card.addEventListener('click', (e) => { if(!e.target.closest('.preview-trigger')) { if(driveId) openVideoFromDriveId(driveId, videoTitle); } });
-    // specific link click
     const linkBtn = card.querySelector('.preview-trigger');
     if(linkBtn) {
       linkBtn.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); if(driveId) openVideoFromDriveId(driveId, videoTitle); });
     }
   });
 
-  // Smooth nav
+  // smooth navigation
   document.querySelectorAll('.nav-links a, .btn-primary[href="#portfolio"], .btn-outline[href="#contact"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const hash = this.getAttribute('href');
